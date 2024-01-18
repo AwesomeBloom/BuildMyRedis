@@ -10,8 +10,8 @@
 
 #include <vector>
 
-#include "BaseServer.hpp"
-#include "../utils/EventLoop.hpp"
+#include "base_server.hpp"
+#include "../utils/event_loop.hpp"
 
 class EventLoopServer : public BaseServer {
 protected:

@@ -5,7 +5,7 @@
 //
 #pragma once
 
-#include "BaseServer.hpp"
+#include "base_server.hpp"
 
 // A server with protocol parsing
 class ProtocolParsingServer : public BaseServer {

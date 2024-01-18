@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "BaseServer.hpp"
+#include "base_server.hpp"
 
 // A basic server
 class BasicServer : public BaseServer {

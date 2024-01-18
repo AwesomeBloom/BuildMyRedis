@@ -3,10 +3,10 @@
 //
 
 #include <cstdio>
-#include "src/server/BasicServer.hpp"
-#include "src/server/ProtocolParsingServer.hpp"
-#include "src/server/EventLoopServer.hpp"
-#include "src/server/BasicFullServer.hpp"
+#include "src/server/basic_server.hpp"
+#include "src/server/protocol_parsing_server.hpp"
+#include "src/server/event_loop_server.hpp"
+#include "src/server/basic_full_server.hpp"
 
 int main(int argc, char *argv[]) {
 

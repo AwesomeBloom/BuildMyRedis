@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "BaseClient.hpp"
+#include "base_client.hpp"
 
 // A basic client
 class BasicClient : public BaseClient{

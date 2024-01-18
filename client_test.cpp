@@ -4,10 +4,10 @@
 
 #include <cstdio>
 
-#include "src/client/BasicClient.hpp"
-#include "src/client/ProtocolParsingClient.hpp"
-#include "src/client/EventLoopClient.hpp"
-#include "src/client/BasicFullClient.hpp"
+#include "src/client/basic_client.hpp"
+#include "src/client/protocol_parsing_client.hpp"
+#include "src/client/event_loop_client.hpp"
+#include "src/client/basic_full_client.hpp"
 
 int main(int argc, char *argv[]) {
 

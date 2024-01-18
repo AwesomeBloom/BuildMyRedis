@@ -1,5 +1,5 @@
 //
-// @brief: Base Client (Baseclass of all Client)
+// @brief: Base server (Baseclass of all Server)
 // @birth: created by Tianyi on 2024/01/08
 // @version: v0.0.1
 //
@@ -11,6 +11,7 @@
 #include <cstring>
 #include <cstdio>
 #include <cerrno>
+#include <csignal>
 #include <cassert>
 #include <iostream>
 
@@ -20,23 +21,26 @@
 #include <sys/socket.h>
 #include <netinet/ip.h>
 
-#include "../utils/OwnRedisException.hpp"
+#include "../utils/own_redis_exception.hpp"
 
-// A base client
-class BaseClient {
+// A basic server
+class BaseServer {
 protected:
     static const int BUF_SIZE = 64;
-    int curFd{-1};
 
-    static void msg(const char *msg) {
-        fprintf(stderr, "%s\n", msg);
-    }
+    // current socket
+    int curFd{-1};
 
     // report and die
     static void die(const char *msg) {
         const int err = errno;
         fprintf(stderr, "[%d] %s\n", err, msg);
         abort();
+    }
+
+    // report msg to stderr
+    static void msg(const char *msg) {
+        fprintf(stderr, "%s\n", msg);
     }
 
     // read n chars;
@@ -67,21 +71,20 @@ protected:
         return 0;
     }
 
-    // perform query
-    virtual int32_t query(int fd, const char* text) {
+    // react to client
+    virtual int32_t perform_request(int connfd) {
         return 0;
     }
 
 public:
-
-    ~BaseClient() {
+    ~BaseServer() {
         if (curFd >= 0) {
             close(curFd);
         }
     }
 
     // main work function
-    virtual int work(const char *msg) {
+    virtual int work() {
         return 0;
     }
 };

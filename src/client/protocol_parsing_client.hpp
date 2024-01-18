@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "BaseClient.hpp"
+#include "base_client.hpp"
 
 class ProtocolParsingClient : public BaseClient {
     static const size_t K_MAX_MSG = 4096;
