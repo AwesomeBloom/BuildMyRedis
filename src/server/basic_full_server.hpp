@@ -15,6 +15,7 @@
 #include "../utils/result_status.hpp"
 
 #define USE_STL_MAP
+
 class BasicFullServer : public EventLoopServer {
 protected:
 #ifdef USE_STL_MAP
